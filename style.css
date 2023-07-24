@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.05rem;
+}
+:focus {
+  /* inner indicator */
+	outline: 2px rgb(130, 12, 12) solid;
+	outline-offset: 0;
+	/* outer indicator */
+	box-shadow: 0 0 0 2px #193146;  
+  border-bottom: 1px solid #ccc;
+
+
+}
+
+body {
+  background: rgb(241,119,41);
+  background: linear-gradient(90deg, rgba(241,119,41,1) 25%, rgba(255,198,0,1) 83%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+
+input {
+  height: 40px;
+  background: rgb(238,161,60);
+  margin: 0;
+  min-width: 400px;
+  max-width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  padding-left: 0.4rem;
+  border-bottom: 2px solid darkred;
+  
+}
+
+.search-container {
+  margin: 0;
+  position: relative;
+ min-width: 400px;
+ max-width: 50%;
+
+}
+/* .search-container input,
+.search-container .suggestions {
+
+}
+.search-container input {
+ 
+}
+.search-container .suggestions {
+
+} */
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  top: calc(100% + 2px);
+  background: rgb(238,161,60);
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.search-container > input:focus + .suggestions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul {
+  list-style-type: none;
+  padding: unset;
+  margin: unset;
+  width: 100%;
+
+}
+
+ul li {
+   overflow: hidden;
+   cursor: pointer;
+   padding: 0.4rem;
+
+}
+ul li:hover {
+background-color: rgb(130, 12, 12, 0.9);
+color: whitesmoke;
+font-weight: normal;
+}
